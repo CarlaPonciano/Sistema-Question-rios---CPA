@@ -15,8 +15,8 @@ import java.sql.Statement;
  */
 public class CursoDAO {
     public boolean cadastrarCurso(CursoDomain curso){
-        String sql = "INSERT INTO cpa.curso(curso, campus_id) VALUES (" + curso.getCurso() + ", " 
-                        + curso.getCampus_id() + ";)";
+        String sql = "INSERT INTO curso(curso, campus_id) VALUES ('" + curso.getCurso() + "', " 
+                        + curso.getCampus_id() + ");";
         try{
             Connection con = ConnectionPostgreSQL.getInstance().getConnection();
             Statement stm = con.createStatement();
@@ -24,8 +24,13 @@ public class CursoDAO {
             return true;
         }catch(SQLException e){
             System.out.println("Erro no cadastro do curso!");
+            System.out.println(sql);
             System.out.println(e.getMessage());
             return false;
         }
+    }
+    
+    public void recuperarCampusId(){
+        
     }
 }

@@ -22,12 +22,14 @@ public class CampusController {
         return campus_dao.cadastrarCampus(campus);
     }
     
-    public List recuperarCampus() throws SQLException{
+    public List<CampusDomain> recuperarCampus() throws SQLException{
         CampusDAO campus_dao = new CampusDAO();
-        CampusDomain campus = new CampusDomain();
-        List lista_campus = new ArrayList();
+        CampusDomain campus;
+        
+        List<CampusDomain> lista_campus = new ArrayList();
         ResultSet rs =  campus_dao.recuperarCampus();
         while(rs.next()){
+            campus = new CampusDomain();
             campus.setId(rs.getInt("id"));
             campus.setCampus(rs.getString("campus"));
             lista_campus.add(campus);

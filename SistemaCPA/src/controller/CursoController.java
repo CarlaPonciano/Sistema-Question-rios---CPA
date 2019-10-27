@@ -13,8 +13,8 @@ import model.CursoDomain;
  * @author carli
  */
 public class CursoController {
-    public boolean cadastrarCurso(CursoDomain campus){
-        CursoDAO campus_dao = new CursoDAO();
-        return campus_dao.cadastrarCurso(campus);
+    public boolean cadastrarCurso(CursoDomain curso){
+        CursoDAO curso_dao = new CursoDAO();
+        return curso_dao.cadastrarCurso(curso);
     }
 }

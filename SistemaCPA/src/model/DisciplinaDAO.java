@@ -15,7 +15,7 @@ import java.sql.Statement;
  */
 public class DisciplinaDAO {
     public boolean cadastrarDisciplina(DisciplinaDomain disciplina){
-        String sql = "INSERT INTO cpa.disciplina(disciplina, curso_id, periodo) VALUES (" + disciplina.getDisciplina() + ", " 
+        String sql = "INSERT INTO disciplina(disciplina, curso_id, periodo) VALUES (" + disciplina.getDisciplina() + ", " 
                         + disciplina.getCurso_id() + ", " + disciplina.getPeriodo() + ";)";
         try{
             Connection con = ConnectionPostgreSQL.getInstance().getConnection();

@@ -15,7 +15,7 @@ import java.sql.Statement;
  */
 public class QuestionarioDAO {
     public boolean cadastrarQuestionario(QuestionarioDomain questionario){
-        String sql = "INSERT INTO cpa.questionario(nome, descricao, Usuario_usuario, TipoQuestionario_id) VALUES "
+        String sql = "INSERT INTO questionario(nome, descricao, Usuario_usuario, TipoQuestionario_id) VALUES "
                         + "(" + questionario.getNome() + ", " + questionario.getDescricao() + ", "
                         + questionario.getCriador() + ", " + questionario.getId_tipo_questionario() + ";)";
         try{
