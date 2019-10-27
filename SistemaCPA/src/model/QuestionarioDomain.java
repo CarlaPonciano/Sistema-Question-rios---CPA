@@ -9,16 +9,16 @@ package model;
  *
  * @author carli
  */
-public class Questionario {
+public class QuestionarioDomain {
     private int id;
     private String nome;
     private String descricao;
     private String criador;
     private int id_tipo_questionario;
 
-    public Questionario() {}
+    public QuestionarioDomain() {}
 
-    public Questionario(int id, String nome, String descricao, String criador, int id_tipo_questionario) {
+    public QuestionarioDomain(int id, String nome, String descricao, String criador, int id_tipo_questionario) {
         this.id = id;
         this.nome = nome;
         this.descricao = descricao;
