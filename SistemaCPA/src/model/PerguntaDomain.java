@@ -9,15 +9,25 @@ package model;
  *
  * @author carli
  */
-class Pergunta {
+public class PerguntaDomain {
     private int id;
     private String pergunta;
+    private TipoPerguntaDomain tipoPergunta;
 
-    public Pergunta() {}
+    public PerguntaDomain() {}
 
-    public Pergunta(int id, String pergunta) {
+    public PerguntaDomain(int id, String pergunta, TipoPerguntaDomain tipoPergunta) {
         this.id = id;
         this.pergunta = pergunta;
+        this.tipoPergunta = tipoPergunta;
+    }
+
+    public TipoPerguntaDomain getTipoPergunta() {
+        return tipoPergunta;
+    }
+
+    public void setTipoPergunta(TipoPerguntaDomain tipoPergunta) {
+        this.tipoPergunta = tipoPergunta;
     }
 
     public int getId() {

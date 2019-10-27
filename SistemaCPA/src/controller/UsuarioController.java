@@ -23,18 +23,23 @@ public class UsuarioController {
         return usuario_dao.atualizarUsuario(usuario);
     }
     
-    public UsuarioDomain recuperarUsuario(String usuario){
+    public UsuarioDomain recuperarUsuario(UsuarioDomain usuario){
         UsuarioDAO usuario_dao = new UsuarioDAO();
         return usuario_dao.recuperarUsuario(usuario);
     }
     
-    public boolean inativarUsuario(String usuario){
+    public boolean inativarUsuario(UsuarioDomain usuario){
         UsuarioDAO usuario_dao = new UsuarioDAO();
         return usuario_dao.inativarUsuario(usuario);
     }
     
-    public boolean ativarUsuario(String usuario){
+    public boolean ativarUsuario(UsuarioDomain usuario){
         UsuarioDAO usuario_dao = new UsuarioDAO();
         return usuario_dao.ativarUsuario(usuario);
+    }
+    
+    public boolean login(UsuarioDomain usuario){
+        UsuarioDAO usuario_dao = new UsuarioDAO();
+        return usuario_dao.login(usuario);
     }
 }

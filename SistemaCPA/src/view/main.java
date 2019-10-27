@@ -19,26 +19,28 @@ public class main {
         System.out.println("");
         System.out.println("Sistema CPA");
         System.out.println("-----MENU-----");
-        System.out.println("1 - Meu perfil");
+        System.out.println("1 - Usuários");
         System.out.println("2 - Cadastrar campus, cursos e disciplinas");
-        System.out.println("3 - Cadastrar Questionário");
+        System.out.println("3 - Questões");
+        System.out.println("4 - Cadastrar Questionário");
         int op = teclado_int.nextInt();
         
         switch (op){
             case 1:
                 UsuarioFacade usuario_facade = new UsuarioFacade();
-                System.out.println("1 - Cadastrar perfil");
+                System.out.println("1 - Cadastrar usuário");
                 System.out.println("2 - Login");
-                System.out.println("3 - Editar perfil");
-                System.out.println("4 - Visualizar perfil");
-                System.out.println("5 - Inativar perfil");
-                System.out.println("6 - Ativar perfil");
+                System.out.println("3 - Editar usuário");
+                System.out.println("4 - Visualizar usuário");
+                System.out.println("5 - Inativar usuário");
+                System.out.println("6 - Ativar usuário");
                 op2 = teclado_int.nextInt();
                 switch (op2){
                     case 1:
                         usuario_facade.persistirUsuario();
                         break;
                     case 2:
+                        usuario_facade.login();
                         break;
                     case 3:
                         usuario_facade.editarUsuario();
@@ -77,8 +79,23 @@ public class main {
                 }
                 break;
             case 3:
+                PerguntaFacade pergunta_facade = new PerguntaFacade();
+                System.out.println("1 - Cadastrar nova questão");
+                System.out.println("2 - Visualizar questões");
+                op2 = teclado_int.nextInt();
+                switch(op2){
+                    case 1:
+                        pergunta_facade.cadastrarPergunta();
+                        break;
+                    case 2:
+                        pergunta_facade.recuperarPerguntas();
+                        break;
+                }
+                break;
+            case 4:
                 QuestionarioFacade questionario_facade = new QuestionarioFacade();
                 questionario_facade.cadastrarQuestionario();
+                break;
             default:
                 System.out.println("Opção Inválida");
                 break;

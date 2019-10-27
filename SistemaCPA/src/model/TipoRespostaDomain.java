@@ -11,14 +11,14 @@ import java.util.List;
  *
  * @author carli
  */
-class TipoResposta {
+public class TipoRespostaDomain {
     private int id;
     private String tipo;
     private List<Resposta> lista_resposta;
 
-    public TipoResposta() {}
+    public TipoRespostaDomain() {}
 
-    public TipoResposta(int id, String tipo, List<Resposta> lista_resposta) {
+    public TipoRespostaDomain(int id, String tipo, List<Resposta> lista_resposta) {
         this.id = id;
         this.tipo = tipo;
         this.lista_resposta = lista_resposta;

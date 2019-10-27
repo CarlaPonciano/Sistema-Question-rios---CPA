@@ -70,18 +70,26 @@ public class UsuarioFacade {
     
     public void recuperarUsuario(){
         Scanner teclado_string = new Scanner(System.in);
+        UsuarioDomain u = new UsuarioDomain();
         
         System.out.println("Informe o nome de usuário: ");
         String usuario = teclado_string.nextLine();
-
+        u.setUsuario(usuario);
+        
         UsuarioController usuario_controller = new UsuarioController();
-        UsuarioDomain u = usuario_controller.recuperarUsuario(usuario);
+        u = usuario_controller.recuperarUsuario(u);
         
         System.out.println("");
         
         System.out.println("Nome: " + u.getNome() + " " + u.getSobrenome());
         System.out.println("E-mail: " + u.getEmail());
         System.out.println("Nome de usuário: " + u.getUsuario());
+        System.out.print("Ativo: ");
+        
+        if (u.getAtivo() == 1) 
+            System.out.println("Sim");
+        else
+            System.out.println("Não");
         
         System.out.println("");
         
@@ -90,12 +98,14 @@ public class UsuarioFacade {
     
     public void inativarUsuario(){
         Scanner teclado_string = new Scanner(System.in);
+        UsuarioDomain u = new UsuarioDomain();
         
         System.out.println("Informe o nome de usuário: ");
         String usuario = teclado_string.nextLine();
-
+        u.setUsuario(usuario);
+        
         UsuarioController usuario_controller = new UsuarioController();
-        if(usuario_controller.inativarUsuario(usuario)) 
+        if(usuario_controller.inativarUsuario(u)) 
             System.out.println("Usuário inativado com sucesso!");
         
         main.menu();
@@ -103,13 +113,36 @@ public class UsuarioFacade {
     
     public void ativarUsuario(){
         Scanner teclado_string = new Scanner(System.in);
+        UsuarioDomain u = new UsuarioDomain();
         
         System.out.println("Informe o nome de usuário: ");
         String usuario = teclado_string.nextLine();
-
+        u.setUsuario(usuario);
+        
         UsuarioController usuario_controller = new UsuarioController();
-        if(usuario_controller.ativarUsuario(usuario)) 
+        if(usuario_controller.ativarUsuario(u)) 
             System.out.println("Usuário ativado com sucesso!");
+        
+        main.menu();
+    }
+    
+    public void login(){
+        Scanner teclado_string = new Scanner(System.in);
+        UsuarioDomain u = new UsuarioDomain();
+        
+        System.out.println("Informe o nome de usuário: ");
+        String usuario = teclado_string.nextLine();
+        u.setUsuario(usuario);
+        
+        System.out.println("Informe a senha: ");
+        String senha = teclado_string.nextLine();
+        u.setSenha(senha);
+        
+        UsuarioController usuario_controller = new UsuarioController();
+        if(usuario_controller.login(u)) 
+            System.out.println("Login realizado com sucesso!.");
+        else
+            System.out.println("Dados incorretos!");
         
         main.menu();
     }
