@@ -5,6 +5,8 @@
  */
 package model;
 
+import java.util.List;
+
 /**
  *
  * @author carli
@@ -15,15 +17,17 @@ public class QuestionarioDomain {
     private String descricao;
     private String criador;
     private int id_tipo_questionario;
+    private List<RespostaQuestionario> resposta_questionario;
 
     public QuestionarioDomain() {}
 
-    public QuestionarioDomain(int id, String nome, String descricao, String criador, int id_tipo_questionario) {
+    public QuestionarioDomain(int id, String nome, String descricao, String criador, int id_tipo_questionario, List<RespostaQuestionario> resposta_questionario) {
         this.id = id;
         this.nome = nome;
         this.descricao = descricao;
         this.criador = criador;
         this.id_tipo_questionario = id_tipo_questionario;
+        this.resposta_questionario = resposta_questionario;
     }
 
     public int getId() {
@@ -64,6 +68,14 @@ public class QuestionarioDomain {
 
     public void setId_tipo_questionario(int id_tipo_questionario) {
         this.id_tipo_questionario = id_tipo_questionario;
+    }
+    
+    public List<RespostaQuestionario> getResposta_questionario() {
+        return resposta_questionario;
+    }
+
+    public void setResposta_questionario(List<RespostaQuestionario> resposta_questionario) {
+        this.resposta_questionario = resposta_questionario;
     }
     
 }

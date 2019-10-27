@@ -16,8 +16,8 @@ import java.sql.Statement;
 public class QuestionarioDAO {
     public boolean cadastrarQuestionario(QuestionarioDomain questionario){
         String sql = "INSERT INTO questionario(nome, descricao, Usuario_usuario, TipoQuestionario_id) VALUES "
-                        + "(" + questionario.getNome() + ", " + questionario.getDescricao() + ", "
-                        + questionario.getCriador() + ", " + questionario.getId_tipo_questionario() + ";)";
+                        + "('" + questionario.getNome() + "', '" + questionario.getDescricao() + "', '"
+                        + questionario.getCriador() + "', " + questionario.getId_tipo_questionario() + ");";
         try{
             Connection con = ConnectionPostgreSQL.getInstance().getConnection();
             Statement stm = con.createStatement();
@@ -25,6 +25,7 @@ public class QuestionarioDAO {
             return true;
         }catch(SQLException e){
             System.out.println("Erro no cadastro do questionário!");
+            System.out.println(sql);
             System.out.println(e.getMessage());
             return false;
         }
