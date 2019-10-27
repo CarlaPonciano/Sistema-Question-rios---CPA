@@ -9,21 +9,23 @@ package model;
  *
  * @author carli
  */
-public class Usuario {
+public class UsuarioDomain {
     private String nome;
     private String sobrenome;
     private String email;
     private String senha;
     private String usuario;
+    private int ativo;
 
-    public Usuario() {}
+    public UsuarioDomain() {}
 
-    public Usuario(String nome, String sobrenome, String email, String senha, String usuario) {
+    public UsuarioDomain(String nome, String sobrenome, String email, String senha, String usuario, int ativo) {
         this.nome = nome;
         this.sobrenome = sobrenome;
         this.email = email;
         this.senha = senha;
         this.usuario = usuario;
+        this.ativo = ativo;
     }
 
     public String getNome() {
@@ -64,6 +66,14 @@ public class Usuario {
 
     public void setUsuario(String usuario) {
         this.usuario = usuario;
+    }
+
+    public int getAtivo() {
+        return ativo;
+    }
+
+    public void setAtivo(int ativo) {
+        this.ativo = ativo;
     }
     
 }
