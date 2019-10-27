@@ -13,16 +13,17 @@ import java.sql.Statement;
  *
  * @author carli
  */
-public class CampusDAO {
-    public boolean cadastrarCampus(CampusDomain campus){
-        String sql = "INSERT INTO cpa.campus(campus) VALUES (" + campus.getCampus() + ");";
+public class CursoDAO {
+    public boolean cadastrarCurso(CursoDomain curso){
+        String sql = "INSERT INTO cpa.curso(curso, campus_id) VALUES (" + curso.getCurso() + ", " 
+                        + curso.getCampus_id() + ";)";
         try{
             Connection con = ConnectionPostgreSQL.getInstance().getConnection();
             Statement stm = con.createStatement();
             stm.executeUpdate(sql);
             return true;
         }catch(SQLException e){
-            System.out.println("Erro no cadastro do campus!");
+            System.out.println("Erro no cadastro do curso!");
             System.out.println(e.getMessage());
             return false;
         }
