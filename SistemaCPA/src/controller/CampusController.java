@@ -5,6 +5,10 @@
  */
 package controller;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 import model.CampusDAO;
 import model.CampusDomain;
 
@@ -16,5 +20,18 @@ public class CampusController {
     public boolean cadastrarCampus(CampusDomain campus){
         CampusDAO campus_dao = new CampusDAO();
         return campus_dao.cadastrarCampus(campus);
+    }
+    
+    public List recuperarCampus() throws SQLException{
+        CampusDAO campus_dao = new CampusDAO();
+        CampusDomain campus = new CampusDomain();
+        List lista_campus = new ArrayList();
+        ResultSet rs =  campus_dao.recuperarCampus();
+        while(rs.next()){
+            campus.setId(rs.getInt("id"));
+            campus.setCampus(rs.getString("campus"));
+            lista_campus.add(campus);
+        }
+        return lista_campus;
     }
 }

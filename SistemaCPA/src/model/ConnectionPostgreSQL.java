@@ -17,8 +17,8 @@ public class ConnectionPostgreSQL {
     private static ConnectionPostgreSQL instance;
     private static Connection connection;
 
-    private static final String serverName = "localhost";
-    private static final String mydatabase = "cpa";
+    private static final String serverName = "200.18.128.54";
+    private static final String mydatabase = "carla";
     private static final String userName = "projeto";
     private static final String password = "projeto";
 
@@ -39,6 +39,6 @@ public class ConnectionPostgreSQL {
     }
 
     Connection getConnection() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return connection;
     }
 }
