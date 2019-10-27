@@ -11,21 +11,19 @@ import java.util.List;
  *
  * @author carli
  */
-public class TipoQuestionario {
+public class TipoQuestionarioDomain {
     private int id;
     private String nome;
     private String descricao;
-    private TipoPergunta tipo_pergunta;
-    private List<RespostaQuestionario> resposta_questionario;
+    private int tipo_pergunta;
 
-    public TipoQuestionario() {}
+    public TipoQuestionarioDomain() {}
 
-    public TipoQuestionario(int id, String nome, String descricao, TipoPergunta tipo_pergunta, List<RespostaQuestionario> resposta_questionario) {
+    public TipoQuestionarioDomain(int id, String nome, String descricao, int tipo_pergunta) {
         this.id = id;
         this.nome = nome;
         this.descricao = descricao;
         this.tipo_pergunta = tipo_pergunta;
-        this.resposta_questionario = resposta_questionario;
     }
 
     public int getId() {
@@ -52,20 +50,12 @@ public class TipoQuestionario {
         this.descricao = descricao;
     }
 
-    public TipoPergunta getTipo_pergunta() {
+    public int getTipo_pergunta() {
         return tipo_pergunta;
     }
 
-    public void setTipo_pergunta(TipoPergunta tipo_pergunta) {
+    public void setTipo_pergunta(int tipo_pergunta) {
         this.tipo_pergunta = tipo_pergunta;
-    }
-
-    public List<RespostaQuestionario> getResposta_questionario() {
-        return resposta_questionario;
-    }
-
-    public void setResposta_questionario(List<RespostaQuestionario> resposta_questionario) {
-        this.resposta_questionario = resposta_questionario;
     }
     
 }

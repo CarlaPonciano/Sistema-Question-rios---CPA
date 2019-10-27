@@ -21,6 +21,7 @@ public class main {
         System.out.println("-----MENU-----");
         System.out.println("1 - Meu perfil");
         System.out.println("2 - Cadastrar campus, cursos e disciplinas");
+        System.out.println("3 - Cadastrar Questionário");
         int op = teclado_int.nextInt();
         
         switch (op){
@@ -75,6 +76,9 @@ public class main {
                         break;
                 }
                 break;
+            case 3:
+                QuestionarioFacade questionario_facade = new QuestionarioFacade();
+                questionario_facade.cadastrarQuestionario();
             default:
                 System.out.println("Opção Inválida");
                 break;
