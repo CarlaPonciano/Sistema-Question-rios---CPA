@@ -6,6 +6,7 @@
 package model;
 
 import java.sql.Connection;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
@@ -30,7 +31,17 @@ public class CursoDAO {
         }
     }
     
-    public void recuperarCampusId(){
-        
+    public ResultSet recuperarCurso(){
+        String sql = "SELECT * FROM curso;";
+        try{
+            Connection con = ConnectionPostgreSQL.getInstance().getConnection();
+            Statement stm = con.createStatement();
+            ResultSet rs = stm.executeQuery(sql);
+            return rs;
+        }catch(SQLException e){
+            System.out.println("Erro na recuperação dos cursos cadastrados!");
+            System.out.println(e.getMessage());
+            return null;
+        }
     }
 }

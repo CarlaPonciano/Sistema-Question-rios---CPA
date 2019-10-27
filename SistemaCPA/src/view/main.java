@@ -15,6 +15,7 @@ public class main {
     
     static void menu(){
         Scanner teclado_int = new Scanner(System.in);
+        System.out.println("");
         System.out.println("Sistema CPA");
         System.out.println("-----MENU-----");
         System.out.println("1 - Cadastrar campus, cursos e disciplinas");
@@ -36,6 +37,8 @@ public class main {
                         curso_facade.cadastrarCurso();
                         break;
                     case 3:
+                        DisciplinaFacade disciplina_facade = new DisciplinaFacade();
+                        disciplina_facade.cadastrarDisciplina();
                         break;
                     default:
                         System.out.println("Opção Inválida!");

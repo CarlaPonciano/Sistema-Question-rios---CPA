@@ -15,8 +15,8 @@ import java.sql.Statement;
  */
 public class DisciplinaDAO {
     public boolean cadastrarDisciplina(DisciplinaDomain disciplina){
-        String sql = "INSERT INTO disciplina(disciplina, curso_id, periodo) VALUES (" + disciplina.getDisciplina() + ", " 
-                        + disciplina.getCurso_id() + ", " + disciplina.getPeriodo() + ";)";
+        String sql = "INSERT INTO disciplina(disciplina, curso_id, periodo) VALUES ('" + disciplina.getDisciplina() + "', " 
+                        + disciplina.getCurso_id() + ", " + disciplina.getPeriodo() + ");";
         try{
             Connection con = ConnectionPostgreSQL.getInstance().getConnection();
             Statement stm = con.createStatement();
@@ -24,6 +24,7 @@ public class DisciplinaDAO {
             return true;
         }catch(SQLException e){
             System.out.println("Erro no cadastro da disciplina!");
+            System.out.println(sql);
             System.out.println(e.getMessage());
             return false;
         }
