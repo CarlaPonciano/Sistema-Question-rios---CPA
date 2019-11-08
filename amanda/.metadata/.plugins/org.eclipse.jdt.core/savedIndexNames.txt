@@ -1,0 +1,1 @@
+INDEX VERSION 1.131+C:\Users\carli\Downloads\amanda-20191108T140121Z-001\amanda\.metadata\.plugins\org.eclipse.jdt.core

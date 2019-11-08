@@ -5,10 +5,10 @@
  */
 package view;
 
-import controller.UsuarioController;
+import controller.Usuario.UsuarioController;
 import java.sql.SQLException;
 import java.util.Scanner;
-import model.UsuarioDomain;
+import model.Usuario.UsuarioDomain;
 
 /**
  *

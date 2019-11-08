@@ -5,13 +5,13 @@
  */
 package view;
 
-import controller.PerguntaController;
-import controller.TipoPerguntaController;
+import controller.Questionario.TipoQuestionario.TipoPergunta.Pergunta.PerguntaController;
+import controller.Questionario.TipoQuestionario.TipoPergunta.TipoPerguntaController;
 import java.sql.SQLException;
 import java.util.List;
 import java.util.Scanner;
-import model.PerguntaDomain;
-import model.TipoPerguntaDomain;
+import model.Questionario.TipoQuestionario.TipoPergunta.Pergunta.PerguntaDomain;
+import model.Questionario.TipoQuestionario.TipoPergunta.TipoPerguntaDomain;
 
 /**
  *

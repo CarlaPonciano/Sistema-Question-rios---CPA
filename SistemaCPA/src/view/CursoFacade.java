@@ -5,13 +5,13 @@
  */
 package view;
 
-import controller.CampusController;
-import controller.CursoController;
+import controller.Questionario.TipoQuestionario.RespostaQuestionario.Campus.CampusController;
+import controller.Questionario.TipoQuestionario.Curso.CursoController;
 import java.sql.SQLException;
 import java.util.List;
 import java.util.Scanner;
-import model.CampusDomain;
-import model.CursoDomain;
+import model.Campus.CampusDomain;
+import model.Curso.CursoDomain;
 
 /**
  *

@@ -5,9 +5,9 @@
  */
 package view;
 
-import controller.CampusController;
+import controller.Questionario.TipoQuestionario.RespostaQuestionario.Campus.CampusController;
 import java.util.Scanner;
-import model.CampusDomain;
+import model.Campus.CampusDomain;
 
 /**
  *
