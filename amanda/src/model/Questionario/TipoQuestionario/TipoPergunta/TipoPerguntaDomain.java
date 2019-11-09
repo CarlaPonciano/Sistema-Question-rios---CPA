@@ -28,6 +28,10 @@ public class TipoPerguntaDomain {
         this.lista_pergunta = lista_pergunta;
     }
 
+    public TipoPerguntaDomain(int id) {
+        this.id = id;
+    }
+
     public int getId() {
         return id;
     }

@@ -10,6 +10,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import javax.faces.bean.ManagedBean;
+import model.Questionario.TipoQuestionario.TipoPergunta.TipoPerguntaDomain;
 import model.Questionario.TipoQuestionario.TipoQuestionarioDAO;
 import model.Questionario.TipoQuestionario.TipoQuestionarioDomain;
 
@@ -46,7 +47,7 @@ public class TipoQuestionarioController {
             tipo_questionario.setId(rs.getInt("id"));
             tipo_questionario.setNome(rs.getString("nome"));
             tipo_questionario.setDescricao(rs.getString("descricao"));
-            tipo_questionario.setTipo_pergunta(rs.getInt("TipoPergunta_id"));
+            tipo_questionario.setTipo_pergunta(new TipoPerguntaDomain(rs.getInt("TipoPergunta_id")));
             lista_tipo_questionario.add(tipo_questionario);
             it = tipo_questionario;
         }
