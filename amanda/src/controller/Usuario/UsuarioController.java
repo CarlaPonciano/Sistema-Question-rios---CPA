@@ -13,9 +13,16 @@ import model.Usuario.UsuarioDomain;
  * @author amanda
  */
 public class UsuarioController {
-    public boolean persistirUsuario(UsuarioDomain usuario){
+    
+    private String mensagem = "";
+    UsuarioDomain usuario = new UsuarioDomain();
+    
+    public void persistirUsuario(){
         UsuarioDAO usuario_dao = new UsuarioDAO();
-        return usuario_dao.persistirUsuario(usuario);
+        usuario_dao.persistirUsuario(usuario);
+        if (usuario != null && usuario.getUsuario() != null) {
+            this.setMensagem("Conta criada com sucesso!");            
+        }
     }
     
     public boolean atualizarUsuario(UsuarioDomain usuario){
@@ -41,5 +48,13 @@ public class UsuarioController {
     public boolean login(UsuarioDomain usuario){
         UsuarioDAO usuario_dao = new UsuarioDAO();
         return usuario_dao.login(usuario);
+    }
+    
+    public String getMensagem() {
+        return mensagem;
+    }
+
+    public void setMensagem(String mensagem) {
+        this.mensagem = mensagem;
     }
 }
