@@ -9,7 +9,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import javax.faces.bean.ManagedBean;
+import javax.annotation.ManagedBean;
 import model.Questionario.TipoQuestionario.RespostaQuestionario.Curso.CursoDAO;
 import model.Questionario.TipoQuestionario.RespostaQuestionario.Curso.CursoDomain;
 
@@ -17,7 +17,7 @@ import model.Questionario.TipoQuestionario.RespostaQuestionario.Curso.CursoDomai
  *
  * @author carli
  */
-@ManagedBean(name="cursoController")
+@ManagedBean(value = "cursoController")
 public class CursoController {
     private CursoDomain curso = new CursoDomain();
 

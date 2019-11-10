@@ -5,7 +5,7 @@
  */
 package controller.Questionario.TipoQuestionario.Disciplina;
 
-import javax.faces.bean.ManagedBean;
+import javax.annotation.ManagedBean;
 import model.Questionario.TipoQuestionario.RespostaQuestionario.Disciplina.DisciplinaDAO;
 import model.Questionario.TipoQuestionario.RespostaQuestionario.Disciplina.DisciplinaDomain;
 
@@ -13,7 +13,7 @@ import model.Questionario.TipoQuestionario.RespostaQuestionario.Disciplina.Disci
  *
  * @author carli
  */
-@ManagedBean(name="disciplinaController")
+@ManagedBean(value = "disciplinaController")
 public class DisciplinaController {
     DisciplinaDomain disciplina = new DisciplinaDomain();
 

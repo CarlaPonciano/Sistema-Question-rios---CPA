@@ -5,8 +5,9 @@
  */
 package controller.Usuario;
 
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.SessionScoped;
+import java.io.Serializable;
+import javax.annotation.ManagedBean;
+import javax.enterprise.context.SessionScoped;
 import model.Usuario.UsuarioDAO;
 import model.Usuario.UsuarioDomain;
 
@@ -14,9 +15,9 @@ import model.Usuario.UsuarioDomain;
  *
  * @author amanda
  */
-@ManagedBean(name="usuarioController")
+@ManagedBean(value = "usuarioController")
 @SessionScoped
-public class UsuarioController {
+public class UsuarioController implements Serializable{
     
     private UsuarioDomain sessao = null;
     private String mensagem = "";

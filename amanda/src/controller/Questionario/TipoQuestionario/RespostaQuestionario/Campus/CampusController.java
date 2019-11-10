@@ -8,8 +8,8 @@ package controller.Questionario.TipoQuestionario.RespostaQuestionario.Campus;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import javax.annotation.ManagedBean;
 import java.util.List;
-import javax.faces.bean.ManagedBean;
  import model.Questionario.TipoQuestionario.RespostaQuestionario.Campus.CampusDAO;
  import model.Questionario.TipoQuestionario.RespostaQuestionario.Campus.CampusDomain;
 
@@ -17,7 +17,7 @@ import javax.faces.bean.ManagedBean;
  *
  * @author carli
  */
-@ManagedBean(name="campusController")
+@ManagedBean(value = "campusController")
 public class CampusController {
     private CampusDomain campus = new CampusDomain();
 
