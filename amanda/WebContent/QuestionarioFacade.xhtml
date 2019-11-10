@@ -6,17 +6,17 @@
 	xmlns:p="http://primefaces.org/ui">
 <h:head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>Insert title here</title>
+<title>Cadastrar Questionário | Sistema CPA</title>
 </h:head>
 <h:body>
 	---Cadastrar Questionário--- <br/>
         Selecione o tipo do questionário: <br/><br/>
         <h:selectManyCheckbox value="#{tipoQuestionarioController.recuperarTipoQuestionario}">
-            <f:selectItem itemValue="#{tipoQuestionarioController.it.nome}"/>
+            <f:selectItem itemValue="#{tipoQuestionarioController.it.nome} - #{tipoQuestionarioController.it.descricao}"/>
         </h:selectManyCheckbox>
         
 	Informe o nome do questionário: <h:inputText/> <br/><br/>
         Informe a descrição do questionário: <h:inputText/> <br/><br/>
-        <h:button value="Cadastrar Questionário"></h:button> <br/><br/>
+        <h:commandButton value="Cadastrar Questionário" action="#{questionarioController.cadastrarQuestionario()}"></h:commandButton> <br/><br/>
 </h:body>
 </html>

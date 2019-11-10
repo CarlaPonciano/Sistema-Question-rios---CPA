@@ -5,6 +5,8 @@
  */
 package controller.Usuario;
 
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
 import model.Usuario.UsuarioDAO;
 import model.Usuario.UsuarioDomain;
 
@@ -12,10 +14,21 @@ import model.Usuario.UsuarioDomain;
  *
  * @author amanda
  */
+@ManagedBean(name="usuarioController")
+@SessionScoped
 public class UsuarioController {
     
+    private UsuarioDomain sessao = null;
     private String mensagem = "";
     UsuarioDomain usuario = new UsuarioDomain();
+    
+    public UsuarioDomain getSession(){
+        return sessao;
+    }
+    
+    public void logout(){
+        this.sessao = null;
+    }
     
     public void persistirUsuario(){
         UsuarioDAO usuario_dao = new UsuarioDAO();

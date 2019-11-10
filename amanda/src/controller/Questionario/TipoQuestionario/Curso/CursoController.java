@@ -9,6 +9,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import javax.faces.bean.ManagedBean;
 import model.Questionario.TipoQuestionario.RespostaQuestionario.Curso.CursoDAO;
 import model.Questionario.TipoQuestionario.RespostaQuestionario.Curso.CursoDomain;
 
@@ -16,8 +17,19 @@ import model.Questionario.TipoQuestionario.RespostaQuestionario.Curso.CursoDomai
  *
  * @author carli
  */
+@ManagedBean(name="cursoController")
 public class CursoController {
-    public boolean cadastrarCurso(CursoDomain curso){
+    private CursoDomain curso = new CursoDomain();
+
+    public CursoDomain getCurso() {
+        return curso;
+    }
+
+    public void setCurso(CursoDomain curso) {
+        this.curso = curso;
+    }
+    
+    public boolean cadastrarCurso(){
         CursoDAO curso_dao = new CursoDAO();
         return curso_dao.cadastrarCurso(curso);
     }
@@ -27,7 +39,7 @@ public class CursoController {
      * @return
      * @throws SQLException
      */
-    public List<CursoDomain> recuperarCampus() throws SQLException{
+    public List<CursoDomain> recuperarCurso() throws SQLException{
         CursoDAO curso_dao = new CursoDAO();
         CursoDomain curso;
         

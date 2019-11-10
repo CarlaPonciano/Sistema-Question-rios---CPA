@@ -6,15 +6,15 @@
 	xmlns:p="http://primefaces.org/ui">
 <h:head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>Insert title here</title>
+<title>Sistema CPA</title>
 </h:head>
 <h:body>
 	---Sistema CPA--- <br/>
         <h:form>
-            <h:outputLink value="QuestionarioFacade.xhtml">Cadastrar Questionario</h:outputLink> <br/><br/>
-            <h:button value="Cadastrar Campus, Cursos e Disciplinas"></h:button> <br/><br/>
-            <h:button value="Questões"></h:button> <br/><br/>
-            <h:outputLink value="cadastrarUsuario.xhtml">Criar Conta</h:outputLink> <br/><br/>
+            <h:commandButton value="Cadastrar Questionário" action="QuestionarioFacade.xhtml"></h:commandButton> <br/><br/>
+            <h:commandButton value="Cadastrar Campus, Cursos e Disciplinas" action="campuscursodisciplina.xhtml"></h:commandButton> <br/><br/>
+            <h:commandButton value="Questões" action="QuestionarioFacade.xhtml"></h:commandButton> <br/><br/>
+            <h:commandButton value="Criar Conta" action="cadastrarUsuario.xhtml"></h:commandButton> <br/><br/>
             <!--Nome: <h:inputText value="#{telaPrincipal.p.nome}"/>-->
         </h:form>
 </h:body>

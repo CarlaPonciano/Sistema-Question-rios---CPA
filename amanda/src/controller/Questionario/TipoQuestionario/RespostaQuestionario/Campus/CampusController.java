@@ -9,6 +9,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import javax.faces.bean.ManagedBean;
  import model.Questionario.TipoQuestionario.RespostaQuestionario.Campus.CampusDAO;
  import model.Questionario.TipoQuestionario.RespostaQuestionario.Campus.CampusDomain;
 
@@ -16,8 +17,19 @@ import java.util.List;
  *
  * @author carli
  */
+@ManagedBean(name="campusController")
 public class CampusController {
-    public boolean cadastrarCampus(CampusDomain campus){
+    private CampusDomain campus = new CampusDomain();
+
+    public CampusDomain getCampus() {
+        return campus;
+    }
+
+    public void setCampus(CampusDomain campus) {
+        this.campus = campus;
+    }
+    
+    public boolean cadastrarCampus(){
         CampusDAO campus_dao = new CampusDAO();
         return campus_dao.cadastrarCampus(campus);
     }

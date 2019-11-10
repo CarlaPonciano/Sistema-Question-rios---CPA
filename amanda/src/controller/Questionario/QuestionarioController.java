@@ -5,6 +5,7 @@
  */
 package controller.Questionario;
 
+import javax.faces.bean.ManagedBean;
 import model.Questionario.QuestionarioDAO;
 import model.Questionario.QuestionarioDomain;
 
@@ -12,8 +13,19 @@ import model.Questionario.QuestionarioDomain;
  *
  * @author carli
  */
+@ManagedBean(name="questionarioController")
 public class QuestionarioController {
-    public boolean cadastrarQuestionario(QuestionarioDomain questionario){
+    private QuestionarioDomain questionario = new QuestionarioDomain();
+
+    public QuestionarioDomain getQuestionario() {
+        return questionario;
+    }
+
+    public void setQuestionario(QuestionarioDomain questionario) {
+        this.questionario = questionario;
+    }
+    
+    public boolean cadastrarQuestionario(){
         QuestionarioDAO questionario_dao = new QuestionarioDAO();
         return questionario_dao.cadastrarQuestionario(questionario);
     }

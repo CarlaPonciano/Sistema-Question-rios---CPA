@@ -10,6 +10,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
 import model.Questionario.TipoQuestionario.TipoPergunta.TipoPerguntaDomain;
 import model.Questionario.TipoQuestionario.TipoQuestionarioDAO;
 import model.Questionario.TipoQuestionario.TipoQuestionarioDomain;
@@ -19,9 +20,10 @@ import model.Questionario.TipoQuestionario.TipoQuestionarioDomain;
  * @author carli
  */
 @ManagedBean(name="tipoQuestionarioController")
+@SessionScoped
 public class TipoQuestionarioController {
     private List<TipoQuestionarioDomain> lista_tipo_questionario = new ArrayList();
-    private TipoQuestionarioDomain it = new TipoQuestionarioDomain();
+    private TipoQuestionarioDomain it;
     
     public TipoQuestionarioController() {
         super();

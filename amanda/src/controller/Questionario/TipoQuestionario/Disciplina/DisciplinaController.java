@@ -5,6 +5,7 @@
  */
 package controller.Questionario.TipoQuestionario.Disciplina;
 
+import javax.faces.bean.ManagedBean;
 import model.Questionario.TipoQuestionario.RespostaQuestionario.Disciplina.DisciplinaDAO;
 import model.Questionario.TipoQuestionario.RespostaQuestionario.Disciplina.DisciplinaDomain;
 
@@ -12,8 +13,19 @@ import model.Questionario.TipoQuestionario.RespostaQuestionario.Disciplina.Disci
  *
  * @author carli
  */
+@ManagedBean(name="disciplinaController")
 public class DisciplinaController {
-    public boolean cadastrarDisciplina(DisciplinaDomain disciplina){
+    DisciplinaDomain disciplina = new DisciplinaDomain();
+
+    public DisciplinaDomain getDisciplina() {
+        return disciplina;
+    }
+
+    public void setDisciplina(DisciplinaDomain disciplina) {
+        this.disciplina = disciplina;
+    }
+    
+    public boolean cadastrarDisciplina(){
         DisciplinaDAO disciplina_dao = new DisciplinaDAO();
         return disciplina_dao.cadastrarDisciplina(disciplina);
     }
