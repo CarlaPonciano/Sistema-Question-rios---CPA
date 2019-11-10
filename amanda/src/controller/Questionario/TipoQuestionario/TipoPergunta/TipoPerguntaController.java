@@ -9,6 +9,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import javax.annotation.ManagedBean;
 import model.Questionario.TipoQuestionario.TipoPergunta.TipoPerguntaDAO;
 import model.Questionario.TipoQuestionario.TipoPergunta.TipoPerguntaDomain;
 import model.Questionario.TipoQuestionario.TipoPergunta.TipoResposta.TipoRespostaDomain;
@@ -17,7 +18,11 @@ import model.Questionario.TipoQuestionario.TipoPergunta.TipoResposta.TipoRespost
  *
  * @author amanda
  */
+
+@ManagedBean(value = "tipoPerguntaController")
+
 public class TipoPerguntaController {
+   TipoPerguntaDomain tp;
    public List<TipoPerguntaDomain> recuperarTipoPergunta() throws SQLException{
         TipoPerguntaDAO tipo_pergunta_dao = new TipoPerguntaDAO();
         TipoPerguntaDomain tipo_pergunta;

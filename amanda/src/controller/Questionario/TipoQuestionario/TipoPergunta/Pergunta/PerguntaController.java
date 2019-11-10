@@ -9,6 +9,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import javax.annotation.ManagedBean;
 import model.Questionario.TipoQuestionario.TipoPergunta.Pergunta.PerguntaDAO;
 import model.Questionario.TipoQuestionario.TipoPergunta.Pergunta.PerguntaDomain;
 import model.Questionario.TipoQuestionario.TipoPergunta.TipoPerguntaDomain;
@@ -17,8 +18,11 @@ import model.Questionario.TipoQuestionario.TipoPergunta.TipoPerguntaDomain;
  *
  * @author amanda
  */
+@ManagedBean(value = "perguntaController")
+
 public class PerguntaController {
-    public boolean cadastrarPergunta(PerguntaDomain pergunta){
+    PerguntaDomain pergunta;
+    public boolean cadastrarPergunta(){
         PerguntaDAO pergunta_dao = new PerguntaDAO();
         return pergunta_dao.cadastrarPergunta(pergunta);
     }
